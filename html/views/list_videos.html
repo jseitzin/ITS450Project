@@ -1,0 +1,33 @@
+<?php // This page is included by shop.php.
+// This page displays the individual categories.
+// This page will make use of the query result $r.
+// The query returns an array of: id, category, description, and image.
+?>
+<!-- box begin -->
+<div class="box alt">
+ 	<div class="left-top-corner">
+    	<div class="right-top-corner">
+       	<div class="border-top"></div>
+       </div>
+    </div>
+    <div class="border-left">
+    	<div class="border-right">
+       	<div class="inner">
+          	<ul class="items-list">
+<?php while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) { // Fetch each item.
+	
+	// Print the item within some HTML:
+	echo '<li><h3>' .$row['title'] . ' </h3> <iframe width="350" height="250" src="https://youtube.com/embed/'.$row['link'].'"frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen> </iframe></li>';	
+
+}?> 
+              </ul>
+          </div>
+       </div>
+    </div>
+    <div class="left-bot-corner">
+    	<div class="right-bot-corner">
+       	<div class="border-bot"></div>
+       </div>
+    </div>
+ </div>
+<!-- box end -->
